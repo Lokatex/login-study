@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/javascript">
+      function wypisz() {
+        var liczba1 = document.getElementById("pole1").value;
+        var liczba2 = document.getElementById("pole2").value;
+        var napis = "";
+
+        for (i = liczba1; i <= liczba2; i++) {
+          napis = napis + i + "";
+        }
+        document.getElementById("wynik").innerHTML = napis;
+      }
+    </script>
+    <style>
+      body {
+        background-color: grey;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <input type="text" id="pole1" />
+      <input type="text" id="pole2" />
+      <input type="submit" value="pokaż" onclick="wypisz()" />
+    </div>
+    <div id="wynik"></div>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script type="text/javascript">
+      function addZero(i) {
+        return i < 10 ? "0" + i : i;
+      }
+
+      function odliczanie() {
+        var dzisiaj = new Date();
+
+        var dzien = addZero(dzisiaj.getDate());
+        var miesiac = addZero(dzisiaj.getMonth() + 1);
+        var rok = addZero(dzisiaj.getFullYear());
+
+        var godzina = addZero(dzisiaj.getHours());
+        var minuta = addZero(dzisiaj.getMinutes());
+        var sekunda = addZero(dzisiaj.getSeconds());
+
+        document.getElementById("zegar").innerHTML =
+          dzien +
+          "/" +
+          miesiac +
+          "/" +
+          rok +
+          " | " +
+          godzina +
+          ":" +
+          minuta +
+          ":" +
+          sekunda;
+      }
+
+      // Dodanie wywołania funkcji odliczanie w odpowiednim czasie (np. co sekundę)
+      setInterval(odliczanie, 1000);
+    </script>
+    <style>
+      body {
+        background-color: grey;
+      }
+      #zegar {
+        padding: 10px;
+        text-align: center;
+        font-size: 30px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: rgb(85, 19, 146);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Dodanie cienia do tekstu */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="zegar"></div>
+  </body>
+</html>

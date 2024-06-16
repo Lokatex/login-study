@@ -1,16 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
       body {
         background-color: grey;
+        font-size: 24px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: black;
+        text-align: center; /* Wyśrodkowanie tekstu */
+      }
+
+      .slajder {
+        margin-top: 20px;
+      }
+      .nav-links {
+        margin-bottom: 20px;
+      }
+      .nav-links a {
+        margin: 0 5px;
+        text-decoration: none;
+        color: blue;
       }
     </style>
+    <script type="text/javascript">
+      var numer = Math.floor(Math.random() * 5) + 1;
+
+      function zmienslajd() {
+        numer++;
+        if (numer > 5) numer = 1;
+        zmienObraz(numer);
+      }
+
+      function zmienObraz(nr) {
+        numer = nr;
+        var plik = "img/" + numer + ".jpg"; // Poprawiona ścieżka do obrazu
+        document.getElementById("slajd").src = plik; // Zmiana źródła obrazu
+      }
+
+      window.onload = function () {
+        setInterval(zmienslajd, 3000); // Zmiana slajdu co 3 sekundy
+      };
+    </script>
     <title>Document</title>
   </head>
   <body>
     <h1>Slajder w JS</h1>
+    <div class="nav-links">
+      [<a href="#" onclick="zmienObraz(1)">1</a>] 
+      [<a href="#" onclick="zmienObraz(2)">2</a>] 
+      [<a href="#" onclick="zmienObraz(3)">3</a>] 
+      [<a href="#" onclick="zmienObraz(4)">4</a>] 
+      [<a href="#" onclick="zmienObraz(5)">5</a>]
+    </div>
+    <div id="slider">
+      <img id="slajd" src="img/1.jpg" alt="Slajd" width="400" height="300" />
+    </div>
   </body>
 </html>

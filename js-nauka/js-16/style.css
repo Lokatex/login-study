@@ -1,0 +1,32 @@
+*{
+    background-color: rgb(233, 204, 204);
+    color: black;
+}
+
+body {
+    display: flex;
+    justify-content: center; /* Wyśrodkuj w poziomie */
+    align-items: center; /* Wyśrodkuj w pionie */
+    height: 100vh; /* Ustaw wysokość na 100% widoku */
+    margin: 0; /* Usuń marginesy */
+    background-color: #f0f0f0; /* Kolor tła (opcjonalnie) */
+  }
+
+.conteiner {
+    border: 2px solid black; /* Dodaj obramowanie */
+    padding: 20px; /* Dodaj padding, aby tekst nie przylegał do obramowania */
+    border-radius: 10px; /* Zaokrąglone rogi (opcjonalnie) */
+    width: 300px; /* Stała szerokość (opcjonalnie) */
+    text-align: center; /* Wyśrodkuj zawartość w poziomie */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Dodaj cień (opcjonalnie) */
+  }
+
+  #pokemonSprite {
+    display: none;
+    margin-top: 20px;
+  }
+  #error-message {
+    color: red;
+    display: none;
+    margin-top: 20px;
+  }
